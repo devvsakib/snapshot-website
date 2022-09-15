@@ -1,0 +1,257 @@
+// Google Font Link
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap');
+// Google Font Link
+
+:root {
+    // --body-bg: ;
+    --primary-color: #000;
+    --secondery-color: #adadad;
+    --title-size: 2rem;
+    --primary-bg-color: #F0F0F0;
+    --font-family: 'Raleway', sans-serif;
+}
+
+//  Reset Tag Default Style
+body {
+    font-family: var(--font-family);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.def-title-sec {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .title {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .description {
+        color: var(--secondery-color);
+    }
+}
+//=========== Header CSS ===========
+.header-section {
+    display: block;
+    height: 80px;
+    background-color: #040100;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 8px 3px 3px #000;
+
+    .logo {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: var(--title-size);
+
+        a {
+            color: rgb(255, 255, 255) !important;
+        }
+
+        span {
+            color: yellow;
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        li {
+            margin: 10px 10px;
+
+            a {
+                padding: 10px 20px;
+                color: var(--secondery-color);
+            }
+        }
+    }
+}
+
+//=========== Header CSS End===========
+
+//=========== Hero CSS===========
+
+.hero-section {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("../images/hero-section-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    color: #fff;
+
+    .hero-content {
+        #title {
+            font-size: 3rem;
+            font-family: poppins;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            line-height: 65px;
+        }
+
+        #describe {
+            width: 700px;
+            font-size: 1.3em;
+            margin: 16px 0;
+
+            span {
+                color: yellow;
+                font-weight: 500;
+            }
+        }
+
+        #heroBtn {
+            outline: none;
+            background: transparent;
+            color: #fff;
+            font-weight: 500;
+            padding: 10px 30px;
+            border: 2px solid yellow;
+            margin-top: 2em;
+        }
+    }
+}
+
+//=========== Hero CSS End===========
+
+
+//=========== Feature CSS ===========
+.feature-section {
+    background: var(--primary-bg-color);
+    height: 550px;
+    display: flex;
+    align-items: center;
+
+    .feature-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 800px;
+        margin: auto;
+
+        .content-box {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px 0 0 10px;
+            margin-right: -35px;
+
+            #feature-title {
+                margin-bottom: 5px;
+                font-size: 1.5em;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 2.5px;
+            }
+
+            #feature-description {
+                width: 500px;
+                color: var(--secondery-color);
+            }
+        }
+
+
+        .feature-img {
+            img {
+                max-width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 10px #ddd, 0 0 0 20px #fff;
+            }
+        }
+    }
+}
+
+.team-section {
+    background: var(--primary-bg-color);
+    padding: 100px 0;
+    .team-sec {
+        display: flex;
+        justify-content: center;
+        margin-left: -100px;
+
+    }
+
+    .team-card {
+        width: 300px;
+        margin-right: -100px;
+        position: relative;
+        padding: 0;
+        box-sizing: border-box; 
+        transition: visibility 300ms ease-in;
+        &::after {
+            content: attr(data-name);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+            color: #fff;
+            font-weight: 900;
+            font-size: 2em;
+            padding-top: 70%;
+            padding-left: 40px;
+            border: 1px solid #fff;
+            cursor: pointer;
+            border-radius: 10px;
+            // box-shadow: inset 0px 0px 0px 10px,
+            // inset 0px 0px 0px 11px #fff;
+            box-sizing: border-box; 
+        }
+
+        &:hover{
+            margin-right: 0;
+            &::after{
+
+                opacity: 1;
+            }
+        }
+
+        // &:hover {
+        //     .team-name {
+        //         display: block;
+        //         display: flex;
+        //         align-items: center;
+        //         cursor: pointer;
+        //     }
+        // }
+        img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+
+
+//=========== Feature CSS End===========
