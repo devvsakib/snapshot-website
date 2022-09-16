@@ -1,3 +1,3 @@
 # Welcome to SnapShot 
 
-[(assets/images/Screenshot_1.png)]
+![Website Screenshot](assets/images/Screenshot_1.png)
