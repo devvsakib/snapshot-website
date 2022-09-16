@@ -186,20 +186,53 @@
     <section class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <h1 id="gallery-title">Gallery</h1>
-                    <p id="gallery-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit sint non
+                <div class="col def-title-sec">
+                    <h1 class="title">Gallery</h1>
+                    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit sint non
                         reiciendis aspernatur quam iure!</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div id="form">
-                        <div class="col-6"><input type="text" name="" id="" placeholder="Name"></div>
-                        <div class="col-6"><input type="email" name="" id="" placeholder="Email"></div>
-                        <div class="col"><textarea name="Mesage" id="" cols="30" rows="10"></textarea></div>
-                        <div class="col"><input type="submit" value="Send Message"></div>
-                    </div>
+                    <form id="form" class="form">
+
+                        <fieldset class="form__informations">
+
+                            <label for="name" class="form__item">
+                                <span class="form__instruction">Name &amp; surname</span>
+                                <input class="form__to-fill" type="text" name="name" id="name"
+                                    placeholder="who are you ?">
+                                <span class="form__animation"></span>
+                            </label>
+
+                            <label for="email" class="form__item">
+                                <span class="form__instruction">Your email</span>
+                                <input class="form__to-fill" type="email" name="email" id="email"
+                                    placeholder="not a fake email">
+                                <span class="form__animation"></span>
+                            </label>
+
+                            <label for="message" class="form__item form__item--top">
+                                <span class="form__instruction">Your message</span>
+                                <textarea class="form__to-fill form__to-fill--textarea" name="message" id="message"
+                                    placeholder="insert your text here"></textarea>
+                                <span class="form__animation"></span>
+                            </label>
+
+                        </fieldset>
+
+                        <fieldset class="form__bottom">
+
+                            <label for="privacy" class="form__checkboxe">
+                                <input type="checkbox" id="privacy">
+                                <span>Accept privacy</span>
+                            </label>
+
+                            <button class="form__submit" type="submit">send</button>
+
+                        </fieldset>
+
+                    </form>
                 </div>
             </div>
         </div>

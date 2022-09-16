@@ -43,6 +43,29 @@ li {
     padding: 0;
 }
 
+fieldset,
+input,
+textarea,
+button {
+    border-width: 0;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 1;
+}
+
+form * {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
 .def-title-sec {
     text-align: center;
     margin-bottom: 50px;
@@ -267,6 +290,7 @@ li {
 
 //=========== Team CSS End ===========
 
+//=========== Gallery CSS ===========
 .gallery-section {
     .masonary {
         display: grid;
@@ -288,6 +312,7 @@ li {
             grid-column: span 2;
 
         }
+
         .gallery-img {
             display: flex;
             justify-content: center;
@@ -295,6 +320,7 @@ li {
             position: relative;
             padding: 0;
             transition: transform 250ms ease-in-out;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -321,17 +347,20 @@ li {
                 padding: 20px;
                 opacity: 0;
                 transition: opacity 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
-                h3{
+
+                h3 {
                     text-transform: uppercase;
                     margin-bottom: 4px;
                     font-weight: 700;
                     text-shadow: 0 3px 2px rgb(0, 0, 0);
                 }
-                p{
+
+                p {
                     text-shadow: 0 2px 2px rgb(0, 0, 0);
 
                 }
-                button{
+
+                button {
                     background-color: transparent;
                     color: yellow;
                     border: 1px solid yellow;
@@ -339,16 +368,258 @@ li {
                     margin-top: 5px;
                 }
             }
-            &:hover{
-                .img-details{
+
+            &:hover {
+                .img-details {
                     opacity: 1;
                 }
+
                 cursor: pointer;
                 transform: translate3d(-1.5em, -10px, 50px);
                 border-radius: 5px;
-                box-shadow: 0 10px 15px  rgba(0, 0, 0, 0.4);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
                 z-index: 999;
             }
         }
     }
 }
+
+//=========== Gallery CSS End ===========
+
+
+//=========== Footer CSS ===========
+//=========== Footer CSS ===========
+//=========== Footer CSS ===========
+//=========== Contact CSS ===========
+.contact-section {
+    margin: 150px 0;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(../images/footerContact.jpg);
+    // background: rgb(10, 195, 241);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    color: #fff !important;
+
+    .form {
+        padding: 10vh 10vw;
+
+        .form__informations {
+            width: 100%;
+            margin-bottom: 30px;
+
+            .form__item {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 20px;
+                border-bottom: solid 1px grey;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 10px;
+
+                .form__instruction {
+                    width: 250px;
+
+                    .form__to-fill {
+                        width: calc(100% - 250px);
+                        color: grey;
+                        padding-left: 50px;
+                    }
+                    #name{
+                        &:focus {
+                            color: lightgray !important;
+                        }
+                    }
+                    .form__animation {
+                        background-color: black;
+                        width: calc(100% - 250px);
+                        position: absolute;
+                        bottom: -100%;
+                        left: 250px;
+                        height: 100%;
+                        transition: all 0.25s ease-out;
+                        z-index: -1;
+                    }
+                }
+            }
+            .form__item--top {
+                align-items: flex-start;
+                .form__to-fill--textarea {
+                    height: 100px;
+                }
+                .form__to-fill:focus + span {
+                    bottom: 0;
+                }
+                .form__to-fill{
+                    &:focus {
+                        color: lightgray !important;
+                    }
+                }
+            }
+        }
+
+        .form__bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px;
+
+            .form__checkboxe {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    margin-left: -20px;
+                    padding-left: 30px;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        border: solid 1px #fff;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+
+                input {
+                    opacity: 0;
+                }
+            }
+            .form__submit {
+                display: block;
+                color: #fff;
+                text-transform: uppercase;
+                position: relative;
+                cursor: pointer;
+            }
+            .form__submit:before, .form__checkboxe span::before {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: auto;
+                right: 0;
+                width: 0;
+                height: 1px;
+                background-color: #fff;
+                transition: width 0.25s ease-out;
+            }
+        }
+        .form__checkboxe input:focus + span:before, .form__checkboxe input:hover + span:before  {
+            left: 0;
+            width: 100%;
+        }
+        .form__checkboxe input:checked + span:after {
+            background-color: #fff;
+        }
+        .form__submit:hover:before, .form__submit:focus:before {
+            left: 0;
+            width: 100%;
+        }
+        .form__item--error {
+            border-color: tomato;
+        }
+        
+        .form__item--error .form__animation {
+            background-color: tomato;
+            bottom: 0;
+        }
+        
+        .form__item--error .form__to-fill {
+            color: white;
+        }
+        
+        .form__checkboxe--error {
+            color: tomato;
+        }
+        
+        .form__checkboxe--error span:after {
+            border-color: tomato;
+        }
+
+    }
+    @media (max-width: 800px) {
+        /* Block */
+        .form__instruction {
+            width: 170px;
+        }
+    
+        /* Element */
+        .form__to-fill {
+            width: calc(100% - 170px);
+            padding-left: 0;
+        }
+    
+        .form__animation {
+            width: calc(100% - 170px);
+            left: 170px;
+        }
+    
+    }
+    
+    @media (max-width: 550px) {
+    
+        /* Block */
+        .form {
+            position: relative;
+            transform: none;
+            padding: 0 20px;
+        }
+    
+        .form__informations {
+            margin-bottom: 0;
+        }
+    
+        .form__bottom {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        /* Elements */
+        .form__item {
+            display: block;
+            margin-bottom: 30px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        .form__instruction {
+            width: 100%;
+            margin-bottom: 20px;
+            display: block;
+        }
+    
+        .form__to-fill {
+            width: 100%;
+            padding-left: 0;
+            display: block;
+        }
+    
+        .form__to-fill--textarea {
+            height: auto;
+        }
+    
+        .form__animation {
+            left: 0;
+            height: 5px;
+            width: 100%;
+        }
+    }
+}
+
+//=========== Contact CSS ===========
+//=========== Footer CSS End ===========
+//=========== Footer CSS End ===========
+//=========== Footer CSS End ===========
