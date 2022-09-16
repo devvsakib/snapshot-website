@@ -15,6 +15,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 h1,
 h2,
 h3,
@@ -154,6 +161,7 @@ li {
 .team-section {
   background: var(--primary-bg-color);
   padding: 100px 0;
+  position: relative;
 }
 .team-section .team-sec {
   display: flex;
@@ -200,4 +208,80 @@ li {
 .team-section .team-card img {
   max-width: 300px;
   border-radius: 10px;
+}
+
+.gallery-section .masonary {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+}
+.gallery-section .masonary .big {
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+}
+.gallery-section .masonary .tall {
+  grid-row: span 2;
+}
+.gallery-section .masonary .wide {
+  grid-column: span 2;
+}
+.gallery-section .masonary .gallery-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  transition: transform 250ms ease-in-out;
+}
+.gallery-section .masonary .gallery-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  transition: 200ms ease-in-out;
+}
+.gallery-section .masonary .gallery-img .img-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.gallery-section .masonary .gallery-img .img-details h3 {
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 700;
+  text-shadow: 0 3px 2px rgb(0, 0, 0);
+}
+.gallery-section .masonary .gallery-img .img-details p {
+  text-shadow: 0 2px 2px rgb(0, 0, 0);
+}
+.gallery-section .masonary .gallery-img .img-details button {
+  background-color: transparent;
+  color: yellow;
+  border: 1px solid yellow;
+  padding: 5px 25px;
+  margin-top: 5px;
+}
+.gallery-section .masonary .gallery-img:hover {
+  cursor: pointer;
+  transform: translate3d(-1.5em, -10px, 50px);
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+.gallery-section .masonary .gallery-img:hover .img-details {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
