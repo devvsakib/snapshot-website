@@ -347,6 +347,7 @@ li {
                 transform: translate3d(-1.5em, -10px, 50px);
                 border-radius: 5px;
                 box-shadow: 0 10px 15px  rgba(0, 0, 0, 0.4);
+                z-index: 999;
             }
         }
     }
